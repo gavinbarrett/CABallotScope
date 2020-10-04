@@ -1,0 +1,15 @@
+$fullwidth: 100vw;
+$propheight: 70vh;
+
+.proposition {
+	display: flex;
+	flex-direction: row;
+	align-items: space-around;
+}
+
+.linkblock {
+	width: $fullwidth;
+	height: $propheight;
+	display: flex;
+	justify-content: space-around;
+}
