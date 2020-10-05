@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
 $fullwidth: 100vw;
 $footerheight: 15vh;
+$background: #2D3142;
+$color: #EF8354;
 
 .footer {
 	width: $fullwidth;
 	height: $footerheight;
-	background: purple;
+	display: flex;
+	flex-direction: column;
+	background: $background;
+}
+
+.footerlink {
+	text-decoration: none;
+	font-family: 'Cabin', sans-serif;
+	color: $color;
 }

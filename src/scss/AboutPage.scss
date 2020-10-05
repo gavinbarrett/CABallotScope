@@ -1,0 +1,10 @@
+$fullwidth: 100vw;
+$aboutheight: 70vh;
+
+.about {
+	width: $fullwidth;
+	height: $aboutheight;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

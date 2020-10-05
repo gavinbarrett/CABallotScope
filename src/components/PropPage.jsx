@@ -1,43 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Heading } from './Heading';
 import { Footer } from './Footer';
+import { Titles, Keywords, Yes, No } from './PropContent';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../scss/PropPage.scss';
 
-const PropPage = ({number}) => {
+const PropPage = () => {
 
-	const declink = `/prop${number-1}`;
-	const inclink = `/prop${number+1}`;
+	const history = useHistory();
+	const params = useParams();
+	let page = params["prop"]
+	page = parseInt(page.substring(1));
 
-	if (number === 14) {
-		return (<><Heading/>
-		<div className="proposition">
-		<div className="linkblock">
-			Prop Page {number}
-			<Link to={inclink}>Next</Link>
-		</div>
-		</div>
-		<Footer/></>);
+	let prevActive;
+	(page === 14) ? prevActive = true : prevActive = false;
+	let nextActive;
+	(page === 25) ? nextActive = true : nextActive = false;
+
+	const prev = async () => {
+		if (page > 14)
+			history.push(`/props/:${page-1}`);
 	}
-	else if (number === 25) {
-		return (<><Heading/>
-		<div className="proposition">
-		<div className="linkblock">
-			<Link to={declink}>Prev</Link>
-			Prop Page {number}
-		</div>
-		</div>
-		<Footer/></>);
+
+	const next = async () => {
+		if (page < 25)
+			history.push(`/props/:${page+1}`);
 	}
+
 	return (<><Heading/>
-	<div className="proposition">
-		<div className="linkblock">
-		<Link to={declink}>Prev</Link>
-		Prop Page {number}
-		<Link to={inclink}>Next</Link>
+		<div className="proposition">
+		  <div className="linkblock">
+			<button className="button prev" disabled={prevActive} onClick={prev}>
+				<FontAwesomeIcon icon={faChevronLeft}/>
+			</button>
+			  <div className={"content"}>
+			    <div className={"proptitle"}>Proposition {page}: {Titles[page-14]}</div>
+				<div>{Yes[page-14]}</div>
+				<div>{No[page-14]}</div>
+			  </div>
+			<button className="button next" disabled={nextActive} onClick={next}>
+				<FontAwesomeIcon icon={faChevronRight}/>
+			</button>
+		  </div>
 		</div>
-		</div>
-		<Footer/></>);
+	<Footer/></>);
 }
 
 export {

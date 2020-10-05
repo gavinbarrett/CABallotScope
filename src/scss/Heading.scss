@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
 $fullwidth: 100vw;
+$titlewidth: 40vw;
 $headingheight: 15vh;
+$background: #2D3142;
+$color: #EF8354;
 
 .heading {
 	width: $fullwidth;
 	height: $headingheight;
-	background: red;
+	background: $background;
+	font-size: 4vw;
+}
+
+.title {
+	width: $titlewidth;
+	font-family: 'Cabin', sans-serif;
+	color: $color;
+	cursor: pointer;
 }

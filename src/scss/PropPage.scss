@@ -1,5 +1,7 @@
 $fullwidth: 100vw;
 $propheight: 70vh;
+$contentwidth: 94vw;
+$buttonwidth: 3vw;
 
 .proposition {
 	display: flex;
@@ -11,5 +13,19 @@ $propheight: 70vh;
 	width: $fullwidth;
 	height: $propheight;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+}
+
+.proptitle {
+	font-size: 3vw;
+}
+
+.content {
+	width: $contentwidth;
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	width: $buttonwidth;
 }
