@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
 $fullwidth: 100vw;
 $propheight: 70vh;
 $contentwidth: 94vw;
+$backwidth: 50vw;
 $buttonwidth: 3vw;
+$titleheight: 12vh;
+$propfont: 'Cabin', sans-serif;
+$keywordheight: 5vh;
+$white: #FFFFFF;
+$buttonblue: #4F5D75;
 
 .proposition {
 	display: flex;
@@ -11,13 +18,15 @@ $buttonwidth: 3vw;
 
 .linkblock {
 	width: $fullwidth;
-	height: $propheight;
 	display: flex;
 	justify-content: space-between;
 }
 
 .proptitle {
 	font-size: 3vw;
+	font-family: $propfont;
+	height: $titleheight;
+	margin: 4%;
 }
 
 .content {
@@ -28,4 +37,41 @@ $buttonwidth: 3vw;
 
 .button {
 	width: $buttonwidth;
+	border: 0;
+	border-radius: 0px;
+	background: $buttonblue;
+	color: $white;
+	font-size: 3vw;
+}
+
+.prompt {
+	display: flex;
+	flex-direction: row;
+	font-family: $propfont;
+	margin: 5%;
+	font-weight: normal;
+}
+
+.bolder {
+	font-weight: bold;
+}
+
+.backgroundwrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: blue;
+}
+
+.propbackground {
+	width: $backwidth;
+	padding: 2%;
+}
+
+.keywords {
+	height: $keywordheight;
+	display: flex;
+	align-items: center;
+	margin-left: 5%;
+	background: $white;
 }
